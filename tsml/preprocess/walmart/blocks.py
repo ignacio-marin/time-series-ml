@@ -15,7 +15,7 @@ class WalmartProcessBlockZero(ExtractPandasCSVMixin, ExportPandasParquetMixin):
 
     name = 'Walmart process block zero'
 
-    def __init__(self, import_path:str, export_path:str):
+    def __init__(self, import_path:list, export_path:str):
         self.import_path   = import_path
         self.export_path   = export_path
 
