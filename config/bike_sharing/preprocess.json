@@ -1,0 +1,23 @@
+{
+    "block_zero": {
+        "import_path": "data/bike_sharing/raw/bike_sharing.csv",
+        "export_path": "data/bike_sharing/processed/bike_sharing.parquet",
+        "import_kwargs": {
+            "usecols": [
+                "season",
+                "year",
+                "month",
+                "hour",
+                "holiday",
+                "weekday",
+                "workingday",
+                "weather",
+                "temp",
+                "feel_temp",
+                "humidity",
+                "windspeed",
+                "count"
+            ]
+        }
+    }
+}
