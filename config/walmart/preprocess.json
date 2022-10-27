@@ -1,0 +1,83 @@
+{
+    "block_zero": {
+        "import_path": [
+            "data/walmart/raw/sales_train_evaluation.csv",
+            "data/walmart/raw/calendar.csv",
+            "data/walmart/raw/sell_prices.csv"
+        ],
+        "export_path": "data/walmart/processed/total_sales.parquet"
+    },
+    "block_one": {
+        "state_id": {
+            "import_path": "data/walmart/processed/total_sales.parquet",
+            "export_path": "data/walmart/processed/state_id_sales.parquet",
+            "group_by": [
+                "state_id",
+                "date"
+            ],
+            "drop_columns": [
+                "item_id",
+                "store_id",
+                "dept_id",
+                "cat_id",
+                "sell_price"
+            ]
+        },
+        "store_id": {
+            "import_path": "data/walmart/processed/total_sales.parquet",
+            "export_path": "data/walmart/processed/store_id_sales.parquet",
+            "group_by": [
+                "store_id",
+                "date"
+            ],
+            "drop_columns": [
+                "item_id",
+                "dept_id",
+                "cat_id",
+                "sell_price"
+            ]
+        },
+        "cat_id": {
+            "import_path": "data/walmart/processed/total_sales.parquet",
+            "export_path": "data/walmart/processed/cat_id_sales.parquet",
+            "group_by": [
+                "cat_id",
+                "date"
+            ],
+            "drop_columns": [
+                "item_id",
+                "dept_id",
+                "store_id",
+                "state_id",
+                "sell_price"
+            ]
+        },
+        "dept_id": {
+            "import_path": "data/walmart/processed/total_sales.parquet",
+            "export_path": "data/walmart/processed/dept_id_sales.parquet",
+            "group_by": [
+                "dept_id",
+                "date"
+            ],
+            "drop_columns": [
+                "item_id",
+                "store_id",
+                "state_id",
+                "cat_id",
+                "sell_price"
+            ]
+        },
+        "id": {
+            "import_path": "data/walmart/processed/total_sales.parquet",
+            "export_path": "data/walmart/processed/item_id_sales.parquet",
+            "group_by": [
+                "item_id",
+                "date"
+            ],
+            "drop_columns": [
+                "store_id",
+                "cat_id"
+            ]
+        }
+    }
+}

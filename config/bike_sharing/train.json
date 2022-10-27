@@ -1,0 +1,19 @@
+{
+    "data_loader": {
+        "import_path": "data/bike_sharing/processed/bike_sharing.parquet",
+        "target": "count",
+        "window_split": 1000,
+        "index": ""
+    },
+    "trainer": {
+        "cv": {
+            "n_splits": 4,
+            "test_size": 3
+        },
+        "scoring": [
+            "neg_mean_absolute_error",
+            "neg_mean_squared_error"
+        ],
+        "verbose": 2
+    }
+}

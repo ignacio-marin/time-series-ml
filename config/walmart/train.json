@@ -1,0 +1,19 @@
+{
+    "data_loader": {
+        "import_path": "data/walmart/processed/store_id_sales.parquet",
+        "target": "value",
+        "window_split": 30,
+        "split_target": false
+    },
+    "trainer": {
+        "cv": {
+            "n_splits": 4,
+            "test_size": 30
+        },
+        "scoring": [
+            "neg_mean_absolute_error",
+            "neg_mean_squared_error"
+        ],
+        "verbose": 2
+    }
+}
