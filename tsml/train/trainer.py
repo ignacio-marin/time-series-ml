@@ -9,8 +9,8 @@ from tsml.base import ExportPickleMixin
 class CustomTimeSeriesSplit(TimeSeriesSplit):
     """
     Extend TimeSeriesSplit functionality to yield the original unique indexes
-    This is convinient when many products are contained in the same dataset, and not just
-    one time series
+    This is convinient when many time series are found in the same dataset, and not just
+    one 
     """
     def split(self, X, date_column: str, y=None, groups=None):
         unique_dates = X[date_column].unique()
